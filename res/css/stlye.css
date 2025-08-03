@@ -1,0 +1,42 @@
+::-webkit-scrollbar-track {
+    background: 0 0; /* 轨道背景透明（0 0 等同于 transparent） */
+    border-radius: .3125rem /* 轨道圆角（约5px） */
+}
+
+::-webkit-scrollbar-track-piece {
+    background: 0 0; /* 轨道片段背景透明 */
+}
+::-webkit-scrollbar-button {
+    background: 0 0; /* 按钮背景透明 */
+    height: 0; /* 隐藏按钮（高度设为0） */
+}
+::-webkit-scrollbar-thumb {
+    background-clip: padding-box; 
+    background-color: #3e999f; 
+    border-radius: 1.25rem 
+}
+
+/* ::-webkit-scrollbar {
+    width: 0.5rem; 
+    height: 2rem !important;
+} */ 
+::-webkit-scrollbar {
+    background: 0 0;
+    width: 0.3125rem;
+    height: 0.3125rem;
+}
+::-webkit-scrollbar {
+    width: .1875rem;
+    height: .1875rem
+}
+
+/* body::-webkit-scrollbar-thumb {
+    background-color: #dd4ec180;
+    background-image: linear-gradient(45deg, #eff2f3 25%,transparent 0,transparent 50%,var( #00000080)0,var( #00000080)75%,transparent 0,transparent);
+    border-radius: 0.25rem
+
+} */
+body::-webkit-scrollbar-thumb {
+    /* 加载后保持渐变粉红 */
+    background: linear-gradient(135deg, #e7b4b5 0%, #fad0c4 99%, #ffece7 100%);
+}

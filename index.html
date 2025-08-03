@@ -16,6 +16,7 @@
     <title>ShyXnok</title>
     <link rel="shortcut icon" href="res/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="res/css/font.css">
+    <link rel="stylesheet" href="res/css/stlye.css">
     <style>
         :root {
             --grey-0: #fff;
@@ -83,7 +84,8 @@
             text-align: center;
 
             width: 100%;
-            background-color: antiquewhite;
+            /* background-color: antiquewhite; */
+            backdrop-filter: saturate(180%) blur(20px);
             position: fixed;
         }
 
@@ -97,14 +99,14 @@
         }
 
         .toggle {
-            flex: 2;
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             line-height: 0;
             cursor: pointer;
-            background-color: antiquewhite;
+            /* background-color: antiquewhite; */
         }
 
         .nav .toggle .lines {
@@ -202,7 +204,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: aqua;
+            /* background-color: aqua; */
             z-index: -1;
         }
 
@@ -229,8 +231,53 @@
             max-height: 9.375rem;
             margin-bottom: -0.6875rem;
             position: relative;
-            background-color: aqua;
+            /* background-color: aqua; */
             /* z-index: -1; */
+        }
+
+        #main {
+            background: linear-gradient(to top, #f7f7f7 0, #fdfdfd 20%) no-repeat bottom;
+        }
+
+        .content {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            display: flex;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .left {
+            flex: 3;
+            border-radius: 2em;
+            position: relative;
+            height: 20em;
+            margin: 1em;
+            /* box-shadow: 0 1.25rem 2rem .3125rem #be0d0d; */
+            box-shadow: 0 1px 20px -6px rgba(0, 0, 0, .5);
+            transition: box-shadow .3s ease;
+            display: none;
+
+        }
+
+        .middle {
+            flex: 7;
+            background: linear-gradient(to top, #fff 0, #fdfdfd 20%) no-repeat top;
+            box-shadow: 0 1.25rem 1rem 0.3125rem #fbf6f6d4;
+            min-height: 1137.5rem;
+            border-radius: 2em;
+            margin: 1em;
+            /* box-shadow: 0 1px 20px -6px rgba(0, 0, 0, .5); */
+        }
+
+        .right {
+            flex: 2;
+            border-radius: 2em;
+            margin: 1em;
+            box-shadow: 0 1px 20px -6px rgba(0, 0, 0, .5);
+            display: none;
         }
 
         @media (width<=820px) {
@@ -238,6 +285,7 @@
                 contain-intrinsic-size: 100vw 10vh;
                 height: 10vh;
             }
+
         }
 
         .parallax>use {
@@ -282,6 +330,42 @@
             }
         }
 
+        #imgs {
+            z-index: -9;
+            content-visibility: auto;
+            contain-intrinsic-size: 100vw 70vh;
+            background-color: #363636;
+            width: 100%;
+            height: 70vh;
+            min-height: 25rem;
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #imgs:before {
+            content: "";
+            z-index: 1;
+            background-color: #0003;
+            width: 100%;
+            height: 100%;
+            transition: all .2s ease-in-out;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #imgs img {
+            -o-object-fit: cover;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
         /* 平板 */
         @media (min-width: 768px) {
@@ -308,10 +392,19 @@
                 font-size: 1.1em;
                 text-align: center;
             }
+
+            .left {
+                display: block;
+            }
+
+            .content {
+                width: 100%;
+
+            }
         }
 
         /* 电脑 */
-        @media (min-width: 1000px) {
+        @media (min-width: 1200px) {
             .nav {
                 display: flex;
                 width: 75%;
@@ -321,6 +414,19 @@
             .toggle {
                 display: none;
             }
+
+            .right {
+                display: block;
+            }
+
+            .content {
+                width: 75%;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: .1875rem;
+            height: .1875rem
         }
     </style>
 </head>
@@ -361,9 +467,8 @@
             </div>
 
         </div>
-        <div>
-            <h1>test</h1>
-        </div>
+        <div class="pjax" id="imgs"><img src="res/img/cover-1.avif" loading="eager" decoding="async"
+                fetchpriority="high" alt="Shy Xnok"></div>
     </div>
     <div id="waves">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -379,6 +484,14 @@
                 <use xlink:href="#gentle-wave" x="48" y="7" class=""></use>
             </g>
         </svg>
+    </div>
+    <div id="main">
+        <div class="content">
+            <div class="right">ss</div>
+            <div class="middle">ss</div>
+            <div class="left">ss</div>
+        </div>
+        <div id="player"></div>
     </div>
 </body>
 <script>
