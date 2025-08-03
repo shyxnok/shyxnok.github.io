@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "shyxnok";
+  src: url("../fonts/shyxnok.eot");
+  src: url("../fonts/shyxnok.eot") format("embedded-opentype"),
+    url("../fonts/shyxnok.ttf") format("truetype"),
+    url("../fonts/shyxnok.woff") format("woff"),
+    url("../fonts/shyxnok.svg") format("svg");
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "tt";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/tt.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+[class^="ic-"],
+[class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "shyxnok" !important;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  width: 1.25em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+
+.ic-moon:before {
+  content: "\e91f";
+}
+.ic-sun:before {
+  content: "\e920";
+}
+.ic-music:before {
+  content: "\e900";
+}
+.ic-telegram:before {
+  content: "\e901";
+}
+.ic-id:before {
+  content: "\e902";
+}
+.ic-redbook:before {
+  content: "\e903";
+}
+.ic-heart:before {
+  content: "\e904";
+}
+.ic-light:before {
+  content: "\e905";
+}
+.ic-location:before {
+  content: "\e906";
+}
+.ic-search:before {
+  content: "\e907";
+}
+.ic-plane:before {
+  content: "\e908";
+}
+.ic-star-solid-full:before {
+  content: "\e909";
+}
+.ic-archive:before {
+  content: "\e90a";
+}
+.ic-chart:before {
+  content: "\e90b";
+}
+.ic-user:before {
+  content: "\e90c";
+}
+.ic-house:before {
+  content: "\e90d";
+}
+.ic-feather:before {
+  content: "\e90e";
+}
+.ic-tags-solid-full:before {
+  content: "\e90f";
+}
+.ic-qq:before {
+  content: "\e910";
+}
+.ic-envelope:before {
+  content: "\e911";
+}
+.ic-x-twitter:before {
+  content: "\e912";
+}
+.ic-weixin:before {
+  content: "\e913";
+}
+.ic-weibo:before {
+  content: "\e914";
+}
+.ic-gitlab:before {
+  content: "\e915";
+}
+.ic-google:before {
+  content: "\e916";
+}
+.ic-instagram:before {
+  content: "\e917";
+}
+.ic-tiktok:before {
+  content: "\e918";
+}
+.ic-twitter:before {
+  content: "\e919";
+}
+.ic-bilibili:before {
+  content: "\e91a";
+}
+.ic-discord:before {
+  content: "\e91b";
+}
+.ic-facebook:before {
+  content: "\e91c";
+}
+.ic-github:before {
+  content: "\e91d";
+}
+.ic-youtube:before {
+  content: "\e91e";
+}

@@ -9,17 +9,409 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShyXnok</title>
     <link rel="shortcut icon" href="res/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="res/css/font.css">
+    <style>
+        :root {
+            --grey-0: #fff;
+            --grey-1: #fdfdfd;
+            --grey-2: #f7f7f7;
+            --grey-3: #eff2f3;
+            --grey-4: #ccc;
+            --grey-5: #999;
+            --grey-6: #666;
+            --grey-7: #333;
+            --grey-8: #222;
+            --grey-9: #000;
+            --grey-1-a0: #fdfdfd00;
+            --grey-1-a7: #fdfdfdb3;
+            --grey-1-a5: #fdfdfd80;
+            --grey-1-a3: #fdfdfd4d;
+            --grey-9-a1: #0000001a;
+            --grey-9-a5: #00000080;
+            --grey-2-a0: #f7f7f700;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        i {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .flex-center {
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            margin: 0;
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            text-shadow: 0 .2rem .3rem rgba(0, 0, 0, .5);
+            color: #fff;
+        }
+
+
+        .navbar {
+            text-align: center;
+
+            width: 100%;
+            background-color: antiquewhite;
+            position: fixed;
+        }
+
+        .nav {
+            width: 100%;
+            display: flex;
+            margin: 0;
+            height: 3em;
+            z-index: 9;
+            transition: all .2s ease-in-out 0s;
+        }
+
+        .toggle {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 0;
+            cursor: pointer;
+            background-color: antiquewhite;
+        }
+
+        .nav .toggle .lines {
+            padding: 0 1.25rem;
+            width: 1.375rem;
+            box-sizing: unset;
+        }
+
+        .toggle .line {
+            background: white;
+            margin: 0.18em 0;
+            display: inline-block;
+            height: 0.1rem;
+            left: 0;
+            position: relative;
+            border-radius: 0.0625rem;
+            top: 0;
+            transition: all 0.4s;
+            vertical-align: top;
+            width: 100%;
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, .5);
+        }
+
+        .toggle.close .line:first-child {
+            transform: rotate(-45deg);
+            top: 0.425rem;
+        }
+
+        .toggle.close .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .toggle.close .line:nth-child(3) {
+            transform: rotate(45deg);
+            top: -0.485rem
+        }
+
+        .menu {
+            flex: 9;
+            padding: 0.5em 0;
+            display: flex;
+            justify-content: center
+        }
+
+        .nav .menu .item {
+            display: none;
+        }
+
+        .nav .menu .titile {
+            display: block;
+            font-family: 'tt';
+        }
+
+        .change {
+            display: flex;
+            flex: 2;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            font-size: 1.2em;
+        }
+
+        .item {
+            display: inline-block;
+            position: relative;
+            padding: 0 .625rem;
+            letter-spacing: .0625rem;
+            text-align: center;
+        }
+
+        .titile {
+            font-size: 1.5em;
+            font-family: 'tt';
+        }
+
+        .ic {
+            margin-right: 0.5rem;
+        }
+
+
+        #change>.item {
+            margin: 0;
+            padding: 0;
+        }
+
+        #brand .pjax {
+            position: fixed;
+            padding: 3rem 5rem 0;
+            text-align: center;
+            width: 100%;
+            height: 50vh;
+            min-height: 10rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+            z-index: -1;
+        }
+
+        #brand .artboard {
+            font-family: 'tt', Mulish, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-size: 3.5em;
+            line-height: 1.2;
+        }
+
+        .overview .menu .item .submenu,
+        .slide-down-in,
+        body.loaded #brand .pjax {
+            animation: slideDownIn .3s
+        }
+
+
+
+        .waves {
+            content-visibility: auto;
+            contain-intrinsic-size: 100vw 15vh;
+            width: 100%;
+            height: 15vh;
+            min-height: 3.125rem;
+            max-height: 9.375rem;
+            margin-bottom: -0.6875rem;
+            position: relative;
+            background-color: aqua;
+            /* z-index: -1; */
+        }
+
+        @media (width<=820px) {
+            .waves {
+                contain-intrinsic-size: 100vw 10vh;
+                height: 10vh;
+            }
+        }
+
+        .parallax>use {
+            animation: 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite wave;
+        }
+
+        use.stop-animation {
+            animation-play-state: paused;
+        }
+
+        .parallax>use:first-child {
+            fill: var(--grey-1-a7);
+            animation-duration: 7s;
+            animation-delay: -2s;
+        }
+
+        .parallax>use:nth-child(2) {
+            fill: var(--grey-1-a5);
+            animation-duration: 10s;
+            animation-delay: -3s;
+        }
+
+        .parallax>use:nth-child(3) {
+            fill: var(--grey-1-a3);
+            animation-duration: 13s;
+            animation-delay: -4s;
+        }
+
+        .parallax>use:nth-child(4) {
+            fill: var(--grey-1);
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translate(-90px);
+            }
+
+            to {
+                transform: translate(85px);
+            }
+        }
+
+
+        /* 平板 */
+        @media (min-width: 768px) {
+            .nav {
+                display: flex;
+                width: 100%;
+            }
+
+            .toggle {
+                display: none;
+            }
+
+            .nav .menu .item {
+                display: flex;
+            }
+
+            .menu {
+                justify-content: flex-start;
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.1em;
+                text-align: center;
+            }
+        }
+
+        /* 电脑 */
+        @media (min-width: 1000px) {
+            .nav {
+                display: flex;
+                width: 75%;
+                margin: 0 auto;
+            }
+
+            .toggle {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div><h1>test</h1></div>
+    <div class="header">
+        <div id="container">
+            <nav class="navbar">
+                <div class="nav">
+                    <div class="toggle" id="toggle">
+                        <div class="lines" aria-label="切换导航栏"><span class="line"></span> <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <ul class="menu">
+                        <li class="item flex-center titile"> <a href="/">ShyXnok</a></li>
+                        <li class="item flex-center"><a href="/"><i class="ic ic-house"></i>index</a></li>
+                        <li class="item flex-center"><a href=""><i class="ic ic-user"></i>about</a></li>
+                        <li class="item flex-center"><a href=""><i class="ic ic-feather"></i>article</a></li>
+                        <li class="item flex-center"><a href=""><i class="ic ic-chart"></i>link</a></li>
+                        <li class="item flex-center"><a href=""><i class="ic ic-plane"></i>find</a></li>
+                    </ul>
+                    <ul class="change" id="change">
+                        <li class="item flex-center"><i class="ic ic-sun" id="theme"></i></li>
+                        <li class="item flex-center"><i class="ic ic-search"></i></li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div id="brand">
+                <div class="pjax"><a href="/" class="logo" rel="start" data-pjax-state="">
+                        <p class="artboard">Shy Xnok</p>
+                        <h1 itemprop="name headline" class="title">若如初见</h1>
+                    </a>
+                    <p class="meta" itemprop="description">= be what you want be =</p>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <h1>test</h1>
+        </div>
+    </div>
+    <div id="waves">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path>
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" class=""></use>
+                <use xlink:href="#gentle-wave" x="48" y="3" class=""></use>
+                <use xlink:href="#gentle-wave" x="48" y="5" class=""></use>
+                <use xlink:href="#gentle-wave" x="48" y="7" class=""></use>
+            </g>
+        </svg>
+    </div>
 </body>
 <script>
-    console.log("%c Theme.ShyXnok v" + '0.0.1' + " %c https://github.com/shyxnok/hexo-theme-ShyXnok ", "color: white; background: rgb(12, 128, 230); padding:5px 0;", "padding:4px;border:1px solid rgb(12, 128, 230);");
 
+    console.log("%c Theme.ShyXnok v" + '0.0.1' + " %c https://github.com/shyxnok/hexo-theme-ShyXnok ", "color: white; background: rgb(12, 128, 230); padding:5px 0;", "padding:4px;border:1px solid rgb(12, 128, 230);");
+    const target = document.getElementById('toggle');
+
+    // 检查元素是否存在
+    if (!target) {
+        console.error(`未找到ID为"${toggle}"的元素`);
+    }
+
+    // 绑定点击事件，切换close类
+    target.addEventListener('click', function () {
+        // 如果有close类则移除，没有则添加
+        if (this.classList.contains('close')) {
+            this.classList.remove('close');
+        } else {
+            this.classList.add('close');
+        }
+    });
+    const theme = document.getElementById('theme')
+    // 绑定点击事件，切换close类
+    theme.addEventListener('click', function () {
+        // 如果有close类则移除，没有则添加
+        if (this.classList.contains('ic-sun')) {
+            this.classList.remove('ic-sun');
+            this.classList.add('ic-moon');
+        } else {
+            this.classList.add('ic-sun');
+            this.classList.remove('ic-moon');
+        }
+    });
 </script>
+
 </html>
