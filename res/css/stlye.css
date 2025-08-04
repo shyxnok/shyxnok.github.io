@@ -23,20 +23,11 @@
 ::-webkit-scrollbar {
     background: 0 0;
     width: 0.3125rem;
-    height: 0.3125rem;
-}
-::-webkit-scrollbar {
-    width: .1875rem;
-    height: .1875rem
 }
 
-/* body::-webkit-scrollbar-thumb {
-    background-color: #dd4ec180;
-    background-image: linear-gradient(45deg, #eff2f3 25%,transparent 0,transparent 50%,var( #00000080)0,var( #00000080)75%,transparent 0,transparent);
-    border-radius: 0.25rem
 
-} */
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
+     height: 3rem;
     /* 加载后保持渐变粉红 */
     background: linear-gradient(135deg, #e7b4b5 0%, #fad0c4 99%, #ffece7 100%);
 }
