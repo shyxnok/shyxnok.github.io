@@ -1,0 +1,23 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #c9bcbc;
+  bottom: 0;
+}
+#time {
+  font-size: 1rem;
+  font-family: "UnidreamLED";
+  background-color: #160e0e;
+  border-radius: 9px;
+  padding: 0.4rem;
+  color: #fff;
+}
+footer > p {
+  font-size: 1rem;
+  margin: 0.2rem 1rem;
+}
+footer > p > span a {
+  color: #c9bcbc;
+}

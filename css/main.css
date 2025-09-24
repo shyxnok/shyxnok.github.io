@@ -1,0 +1,42 @@
+.card-link .item:before {
+  content: '';
+}
+.card-link .item i {
+  position: relative;
+}
+.card-link .item.github:before {
+  background-color: #191717;
+}
+.card-link .item.github i {
+  color: #191717;
+}
+.card-link .item.twitter:before {
+  background-color: #2bdbe8;
+}
+.card-link .item.twitter i {
+  color: #2bdbe8;
+}
+.card-link .item.weibo:before {
+  background-color: #e6482c;
+}
+.card-link .item.weibo i {
+  color: #e6482c;
+}
+.card-link .item.bilibili:before {
+  background-color: #00aeec;
+}
+.card-link .item.bilibili i {
+  color: #00aeec;
+}
+.card-link .item.facebook:before {
+  background-color: #1548ff;
+}
+.card-link .item.facebook i {
+  color: #1548ff;
+}
+.card-link .item.email:before {
+  background-color: #1ef0ff;
+}
+.card-link .item.email i {
+  color: #1ef0ff;
+}

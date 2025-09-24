@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "shyxnok"; /* Project id 4995228 */
+  src: url('../font/iconfont.woff2?t=1757258336424') format('woff2'),
+       url('../font/iconfont.woff?t=1757258336424') format('woff'),
+       url('../font/iconfont.ttf?t=1757258336424') format('truetype');
+}
+
+.shyxnok {
+  font-family: "shyxnok" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-time:before {
+  content: "\e688";
+}
+
+.icon-pen:before {
+  content: "\e98a";
+}
+
+.icon-date:before {
+  content: "\eb9b";
+}
+
+.icon-feather:before {
+  content: "\e635";
+}
+
+.icon-sun:before {
+  content: "\e623";
+}
+
+.icon-bgcode:before {
+  content: "\e604";
+}
+
+.icon-bgcode-copy:before {
+  content: "\e605";
+}
+
+.icon-qq:before {
+  content: "\e640";
+}
+
+.icon-moon:before {
+  content: "\e641";
+}
+
+.icon-house:before {
+  content: "\e617";
+}
+
+.icon-x-twitter:before {
+  content: "\e618";
+}
+
+.icon-twitter:before {
+  content: "\e619";
+}
+
+.icon-user:before {
+  content: "\e61a";
+}
+
+.icon-location:before {
+  content: "\e61b";
+}
+
+.icon-facebook:before {
+  content: "\e61c";
+}
+
+.icon-weixin:before {
+  content: "\e61d";
+}
+
+.icon-google:before {
+  content: "\e61e";
+}
+
+.icon-archive:before {
+  content: "\e61f";
+}
+
+.icon-id:before {
+  content: "\e620";
+}
+
+.icon-star-solid-full:before {
+  content: "\e621";
+}
+
+.icon-gitlab:before {
+  content: "\e606";
+}
+
+.icon-search:before {
+  content: "\e622";
+}
+
+.icon-tags-solid-full:before {
+  content: "\e608";
+}
+
+.icon-youtube:before {
+  content: "\e60a";
+}
+
+.icon-discord:before {
+  content: "\e609";
+}
+
+.icon-redbook:before {
+  content: "\e60b";
+}
+
+.icon-heart:before {
+  content: "\e607";
+}
+
+.icon-music:before {
+  content: "\e60c";
+}
+
+.icon-chart:before {
+  content: "\e60d";
+}
+
+.icon-github:before {
+  content: "\e60e";
+}
+
+.icon-telegram:before {
+  content: "\e60f";
+}
+
+.icon-plane:before {
+  content: "\e610";
+}
+
+.icon-envelope:before {
+  content: "\e611";
+}
+
+.icon-tiktok:before {
+  content: "\e612";
+}
+
+.icon-weibo:before {
+  content: "\e613";
+}
+
+.icon-bilibili:before {
+  content: "\e614";
+}
+
+.icon-light:before {
+  content: "\e615";
+}
+
+.icon-instagram:before {
+  content: "\e616";
+}
+

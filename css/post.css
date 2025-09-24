@@ -1,0 +1,100 @@
+.post-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem 2rem 2rem;
+}
+.post-card {
+  width: 100%;
+  height: 20vh;
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
+  transition: box-shadow 0.3s ease;
+}
+.post-list>.post-card:nth-child(2n) {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.post_img {
+  width: 50%;
+  height: 100%;
+  margin: 0 1rem 0 0;
+  clip-path: polygon(0 0, 92% 0%, 98% 100%, 0% 100%);
+}
+.post-list>.post-card:nth-child(2n)>.post_img {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 8% 100%);
+  margin: 0 0rem 0 1rem;
+}
+.post-title {
+  justify-content: flex-start;
+  text-align: start;
+  overflow: hidden;
+  color: #e7621f;
+  margin: 1rem 0 1rem 0;
+  font-size: 1.5rem;
+}
+.post_img >img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem 0 0 1rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+.post-list>.post-card:nth-child(2n)> .post_img > img {
+  border-radius: 0 1rem 1rem 0;
+}
+.post_content {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem 1rem 1rem 0;
+}
+.post-list>.post-card:nth-child(2n)> .post_content {
+  padding: 1rem 0rem 1rem 1rem;
+}
+.tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.post-list>.post-card:nth-child(2n)> .post_content>.tag {
+  justify-content: flex-start;
+}
+.tag_item {
+  margin: 0 0 0 1rem;
+  color: rgba(156,207,248,0.493);
+}
+.post-list>.post-card:nth-child(2n)> .post_content>.tag>.tag_item {
+  margin: 0 1rem 0 0;
+}
+.more {
+  background-color: #fe523b;
+  border-radius: 1rem 0 1rem 0;
+  padding: 1rem;
+  height: 3rem;
+  width: 6rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateZ(2rem);
+  font-size: 0.7rem;
+}
+.post-list>.post-card:nth-child(2n)>.post_content > .more {
+  border-radius: 0 1rem 0 1rem;
+  left: 0;
+}
+.post-excerpt {
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  max-height: 5rem;
+  font-size: 1rem;
+  display: -webkit-box;
+  overflow: hidden;
+}
