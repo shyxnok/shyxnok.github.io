@@ -1,0 +1,143 @@
+/* ============================================================
+   Halcyon Theme — style.css
+   CSS Custom Properties & Global Reset
+   Based on Shoka design language
+   ============================================================ */
+
+:root {
+  /* ---- Color palette ---- */
+  --grey-0: #fff;
+  --grey-1: #fdfdfd;
+  --grey-2: #f7f7f7;
+  --grey-3: #eff2f3;
+  --grey-4: #ccc;
+  --grey-5: #999;
+  --grey-6: #666;
+  --grey-7: #333;
+  --grey-8: #222;
+  --grey-9: #000;
+  --grey-1-a0: rgba(253, 253, 253, 0);
+  --grey-1-a7: rgba(253, 253, 253, 0.7);
+  --grey-1-a5: rgba(253, 253, 253, 0.5);
+  --grey-1-a3: rgba(253, 253, 253, 0.3);
+  --grey-9-a1: rgba(0, 0, 0, 0.1);
+  --grey-9-a5: rgba(0, 0, 0, 0.5);
+  --grey-2-a0: rgba(247, 247, 247, 0);
+
+  /* ---- Accent colors ---- */
+  --color-pink: #f4b7f4;
+  --color-pink-light: #ffe6fa;
+  --color-orange: #f4b7a0;
+  --color-cyan-light: #a0f4f4;
+  --color-aqua: #6cf;
+  --primary-color: #222;
+
+  /* ---- Header ---- */
+  --header-text-color: #fff;
+  --header-bg: #363636;
+  --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
+  --text-color: var(--grey-7);
+
+  /* ---- Fonts ---- */
+  --font-family-logo: 'Fredericka', 'Fredericka the Great', cursive;
+  --font-family-sans: 'Mulish', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-size-logo: 3.5em;
+  --font-size-title: 1.5em;
+
+  /* ---- Z-index ---- */
+  --zindex-0: 1000;
+  --zindex-1: 1001;
+  --zindex-2: 1002;
+
+  /* ---- Transition ---- */
+  --transition-duration: 0.2s;
+  --transition-ease: ease-in-out;
+}
+
+/* ---- Dark mode ---- */
+[data-theme="dark"] {
+  --grey-0: #222;
+  --grey-1: #21252b;
+  --grey-2: #363636;
+  --grey-3: #444;
+  --grey-4: #666;
+  --grey-5: #aaa;
+  --grey-6: #ccc;
+  --grey-7: #ddd;
+  --grey-8: #eee;
+  --grey-9: #f7f7f7;
+  --grey-1-a7: rgba(34, 34, 34, 0.7);
+  --grey-1-a5: rgba(34, 34, 34, 0.5);
+  --grey-1-a3: rgba(34, 34, 34, 0.3);
+  --grey-9-a1: rgba(51, 51, 51, 0.1);
+  --text-color: var(--grey-8);
+  --primary-color: #ddd;
+  --nav-bg: linear-gradient(-225deg, #2d3a4a 0, #3d2e3e 100%);
+}
+
+/* ---- Global Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 0.3125rem;
+  height: 0.3125rem;
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  border-radius: 0.3125rem;
+  background: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+::-webkit-scrollbar-button {
+  background: transparent;
+  height: 0;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 1.25rem;
+  background-clip: padding-box;
+  background-color: var(--color-pink);
+  background-image: linear-gradient(
+    45deg,
+    #f7b8fc 25%,
+    transparent 0,
+    transparent 50%,
+    #f7b8fc 0,
+    #f7b8fc 75%,
+    transparent 0,
+    transparent
+  );
+}
+
+/* ---- Pointer click effect ---- */
+.pointer {
+  position: fixed;
+  z-index: 999999;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+}

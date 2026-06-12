@@ -1,0 +1,50 @@
+/* 波浪动画 */
+.waves {
+  content-visibility: auto;
+  width: 100%;
+  height: 15vh;
+  min-height: 3.125rem;
+  max-height: 9.375rem;
+  margin-bottom: -0.6875rem;
+  position: relative;
+
+}
+.parallax > use {
+  animation: 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite wave;
+}
+
+use.stop-animation {
+  animation-play-state: paused;
+}
+
+.parallax > use:first-child {
+  fill: var(--grey-1-a7);
+  animation-duration: 7s;
+  animation-delay: -2s;
+}
+
+.parallax > use:nth-child(2) {
+  fill: var(--grey-1-a5);
+  animation-duration: 10s;
+  animation-delay: -3s;
+}
+
+.parallax > use:nth-child(3) {
+  fill: var(--grey-1-a3);
+  animation-duration: 13s;
+  animation-delay: -4s;
+}
+
+.parallax > use:nth-child(4) {
+  fill: var(--grey-1);
+  animation-duration: 20s;
+  animation-delay: -5s;
+}
+@keyframes wave {
+  0% {
+    transform: translate(-90px);
+  }
+  to {
+    transform: translate(85px);
+  }
+}

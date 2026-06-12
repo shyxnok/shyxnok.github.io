@@ -1,0 +1,82 @@
+/* ============================================================
+   Container & Main Layout
+   Based on Shoka design
+   ============================================================ */
+
+#container {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+main {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 0 2rem;
+  background-color: #fdfdfd;
+}
+
+main > .inner {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Content column */
+#main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Wrap — content card container */
+.wrap {
+  background: var(--grey-1);
+  border-radius: 0.625rem;
+  box-shadow: 0 0.1rem 0.5rem var(--grey-9-a1);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  transition: background-color var(--transition-duration) var(--transition-ease);
+}
+
+/* Divider heading */
+.divider {
+  position: relative;
+  margin: 1rem 0 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 2rem;
+  height: 2px;
+  background: var(--color-pink);
+}
+
+/* Dimmer overlay */
+.dimmer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  main > .inner {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 1.25rem;
+    border-radius: 0;
+  }
+}
